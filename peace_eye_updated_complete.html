@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Peace Eye — underground comix, alternative comics, vintage paperbacks, zines and unusual printed matter.">
+<title>PEACE EYE</title>
+
+<style>
+    /* Minimal black text on a clean, pale background */
+    :root {
+        --outside: #fafafa;
+        --paper: #ffffff;
+        --ink: #000000;
+        --rule: #d4d4d4;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+        margin: 0;
+        padding: 30px 16px;
+        background: var(--outside);
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+
+    /* The same 760px central page as before */
+    .wrapper {
+        width: 760px;
+        max-width: 100%;
+        margin: 0 auto;
+        background: var(--paper);
+        border: 1px solid var(--rule);
+    }
+
+    .header {
+        text-align: center;
+        padding: 23px 20px 19px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .header img {
+        display: block;
+        width: 340px;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 24px;
+        padding: 12px;
+        border-bottom: 1px solid var(--rule);
+        background: #ffffff;
+        font: bold 12px/1.4 Arial, Helvetica, sans-serif;
+        letter-spacing: 0.5px;
+    }
+
+    .nav a { color: var(--ink); text-decoration: none; }
+    .nav a:hover, .nav a:focus-visible { text-decoration: underline; }
+
+    /* Plain scrolling text, without coloured panels */
+    .marquee {
+        overflow: hidden;
+        padding: 6px 5px;
+        background: #fff;
+        color: #000;
+        border-bottom: 1px solid var(--rule);
+        font: bold 12px/1.3 Arial, Helvetica, sans-serif;
+    }
+
+    .marquee marquee { display: block; }
+
+    .feature {
+        padding: 24px 30px 30px;
+        text-align: center;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .feature-image {
+        display: block;
+        width: 100%;
+        max-height: 480px;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        border: 1px solid var(--rule);
+    }
+
+    .about {
+        padding: 22px 30px 30px;
+        border-bottom: 1px solid var(--rule);
+    }
+
+    h2 {
+        margin: 0 0 22px;
+        text-align: center;
+        font-size: 19px;
+        line-height: 1.2;
+        letter-spacing: 1px;
+    }
+
+    .about-content {
+        display: grid;
+        grid-template-columns: 42% minmax(0, 1fr);
+        align-items: start;
+        gap: 25px;
+    }
+
+    .about-photo {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 340px;
+        object-fit: contain;
+        border: 1px solid var(--rule);
+    }
+
+    .about-copy { font-size: 14px; line-height: 1.57; }
+    .about-copy p { margin: 0 0 13px; }
+    .about-copy p:last-child { margin-bottom: 0; }
+
+    .contact {
+        padding: 29px 30px 35px;
+        text-align: center;
+    }
+
+    .contact h2 { margin-bottom: 15px; }
+    .contact p {
+        max-width: 530px;
+        margin: 0 auto 12px;
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .contact a {
+        color: #000;
+        font-weight: bold;
+        text-underline-offset: 3px;
+        overflow-wrap: anywhere;
+    }
+
+    .footer {
+        padding: 17px 20px;
+        border-top: 1px solid var(--rule);
+        background: #ffffff;
+        color: var(--ink);
+        text-align: center;
+        font-size: 11px;
+    }
+
+    @media (max-width: 540px) {
+        body { padding: 12px 8px; }
+        .header { padding: 19px 15px; }
+        .feature, .about { padding: 20px; }
+        .about-content { grid-template-columns: 1fr; gap: 17px; }
+        .about-photo { max-width: 300px; margin: 0 auto; }
+        .contact { padding: 25px 20px 30px; }
+    }
+
+    /* FIND US and OPENING HOURS always sit side by side */
+    .contact .visit-columns {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 26px;
+        max-width: 620px;
+        margin: 25px auto 0;
+        text-align: left;
+    }
+
+    .contact .visit-columns > div { min-width: 0; }
+
+    .contact .visit-columns h3 {
+        margin: 0 0 15px;
+        font: bold 13px/1.4 Arial, Helvetica, sans-serif;
+        letter-spacing: 1px;
+    }
+
+    .contact .visit-columns p {
+        margin: 0 0 12px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .contact hr {
+        border: 0;
+        border-top: 1px solid var(--rule);
+        max-width: 620px;
+        margin: 28px auto 0;
+    }
+
+    @media (max-width: 540px) {
+        .contact .visit-columns {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 12px;
+        }
+        .contact .visit-columns p { font-size: 12px; }
+        .contact .visit-columns h3 { font-size: 11px; }
+    }
+
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+    <header class="header">
+        <img src="peaceeye copy.jpg" alt="Peace Eye">
+    </header>
+
+    <!-- Replace the first URL with your own eBay seller/shop URL. -->
+    <nav class="nav" aria-label="Main navigation">
+        <a href="https://www.ebay.co.uk/usr/REPLACE_WITH_YOUR_USERNAME" target="_blank" rel="noopener noreferrer">CATALOG</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+    <div class="marquee" aria-label="Underground comix, vintage paperbacks, zines and posters">
+        <marquee scrollamount="3">UNDERGROUND COMIX &bull; VINTAGE PAPERBACKS &bull; SMALL PRESS &bull; FANZINES &bull; POSTERS &bull; UNUSUAL PRINTED MATTER &bull;</marquee>
+    </div>
+
+    <main>
+        <section class="feature" aria-label="Peace Eye feature image">
+            <img class="feature-image" src="HighRISE.jpg" alt="A book from the Peace Eye collection — temporary image until a photograph of the shop is available">
+        </section>
+
+        <section class="about" id="about" aria-labelledby="about-title">
+            <h2 id="about-title">ABOUT</h2>
+            <div class="about-content">
+                <img class="about-photo" src="BWPeace Eye Comics on Quernmore Road.png" alt="Peace Eye Comics shopfront">
+                <div class="about-copy">
+                    <p>Founded in 2026 by cartoonist and painter Adam Falp, Peace Eye is an independent shop dedicated to underground comix, alternative comics and unusual printed matter. Falp has spent more than a decade making counter culture inspired Art, including his own titles <em>Electric Chair</em> and <em>Smokin' Bedroom</em>.</p>
+
+                    <p>Peace Eye grew out of that same enthusiasm for comics and the people who make them. Its shelves bring together the American undergrounds of the 1960s and '70s, contemporary independent cartoonists, old science-fiction paperbacks, fanzines, and underground ephemera.</p>
+
+                    <p>Peace Eye continues the tradition of the old school comics shop, inviting comix fans to dig through long boxes, meet one another, and discover strange printed matter.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">CONTACT &amp; VISIT</h2>
+
+            <p>For all enquiries, including buying and selling underground comix,
+            comic books and printed matter, please contact the shop:</p>
+            <p><a href="mailto:thepeaceeye@gmail.com">thepeaceeye@gmail.com</a></p>
+
+            <hr>
+
+            <div class="visit-columns">
+                <div class="visit-address">
+                    <h3>FIND US</h3>
+                    <p><strong>PEACE EYE</strong><br>
+                    [Street number] Quernmore Road<br>
+                    London N4<br>
+                    United Kingdom</p>
+                    <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Quernmore+Road+London"
+                        target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+                </div>
+
+                <div class="visit-hours">
+                    <h3>OPENING HOURS</h3>
+                    <p>Thursday &ndash; Saturday<br>11am &ndash; 6pm<br>
+                    Sunday<br>12pm &ndash; 4pm</p>
+                    <p><small>Proposed opening hours.</small></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        &copy; PEACE EYE &mdash; Purveyors of Underground Comix &amp; Unusual Print
+    </footer>
+</div>
+</body>
+</html>
